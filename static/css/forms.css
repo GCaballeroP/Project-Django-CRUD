@@ -1,0 +1,38 @@
+input{
+    outline: none;
+    box-shadow: none;
+    border: 1px solid var(--color-text);
+    padding: 5px;
+    width:100%;
+   
+   
+}
+
+.btn-send{
+    width:100px;
+    margin:auto;
+    background-color: var(--color-primary);
+    color: white;
+    border: 0;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+
+.btn-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+}
+
+.btn-aux-form{
+    margin: auto;
+    display: flex;
+    justify-content:flex-start;
+    margin: 10px;
+}
+
+.btn-aux-form a{
+    padding-right: 10px;
+    text-decoration: none;
+}
