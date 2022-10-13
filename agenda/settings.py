@@ -16,7 +16,7 @@ import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -82,12 +82,14 @@ WSGI_APPLICATION = 'agenda.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config (
-        # default='postgresql://postgres:postgres@localhost:5432/mysite', conn_max_age=600
-        default='sqlite:///db.sqlite3',
-        conn_max_age=600
-        
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'agenda',
+        'USER': 'postgres',
+        'PASSWORD': 'root',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
 }
 
 
@@ -127,10 +129,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-#STATICFILES_DIRS = [
-#BASE_DIR / "static",
-#'/var/www/static', 
-#]
+# STATICFILES_DIRS = [
+# BASE_DIR / "static",
+# '/var/www/static', 
+# ]
 
 #if not DEBUG:
     #STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
