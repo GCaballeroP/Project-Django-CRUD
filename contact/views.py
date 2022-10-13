@@ -1,4 +1,4 @@
-from asyncio.windows_events import NULL
+#from asyncio.windows_events import NULL
 from lzma import FORMAT_ALONE
 from multiprocessing import context
 from django.shortcuts import render,redirect
@@ -10,8 +10,8 @@ from django.http import HttpResponse
 # Create your views here.
 # istartswith es case sensite
 
-def index(request,letter = NULL):
-    if letter !=NULL:
+def index(request,letter = None):
+    if letter !=None:
         contacts = Contact.objects.filter(name__istartswith=letter)
     else:
         contacts = Contact.objects.filter(name__contains=request.GET.get('search',''))
